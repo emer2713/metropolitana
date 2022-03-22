@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'Paquetes')
+@section('title', 'Promociones')
 
 @section('content')
     @if ($cp > 0)
