@@ -1,0 +1,54 @@
+.dropdown:hover .dropdown-menu {
+    transition: 0.5s;
+    border-radius: 0 3px 3px 0;
+    border: 0;
+    left: 100%;
+    display: block;
+    top: 1%;
+    min-width: 8rem;
+}
+
+.dropdown-menu a {
+    color: #707791;
+}
+
+.dropdown-menu li:hover {
+    background: #707791;
+}
+
+.dropdown-menu a:hover {
+    font-family: "Montserrat-Bold";
+    color: #fff;
+}
+
+.dropdown-menu {
+    font-size: 0.8rem !important;
+}
+
+.dropdown:hover .dropdown-menu-user {
+    transition: 0.5s;
+    border-radius: 0 3px 3px 0;
+    border: 0;
+    left: 0%;
+    display: block;
+    top: 90%;
+    min-width: 8rem;
+}
+
+.dropdown-menu-user a {
+    color: #707791;
+}
+
+.dropdown-menu-user li:hover {
+    background: #707791;
+    color: #fff;
+}
+
+.dropdown-menu-user li:hover .us {
+    font-family: "Montserrat-Bold";
+    color: #fff !important;
+}
+
+.dropdown-menu-user {
+    font-size: 0.8rem !important;
+}
