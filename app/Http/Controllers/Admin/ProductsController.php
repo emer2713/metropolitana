@@ -842,10 +842,9 @@ class ProductsController extends Controller
 
 
             $product = new Promotion;
-            $product ->principal               = $request->input('principal');
             $product ->sku                  = 'P-'.$filename;
             $product ->name          = e($request->input('name'));
-
+            $product ->principal          = 0;
             $product ->price               = e($request->input('price'));
             $product ->description               = e($request->input('description'));
             $product ->status                       ='draft';
@@ -859,17 +858,17 @@ class ProductsController extends Controller
                 $filename = rand(1,999).'-'.$name.'.'.$fileExt;
                 $file_absolute = $upload_path.'/'.$path.'/'.$filename;
                 $product ->file_path                  = $path;
-                 $product ->file                       = $filename;
+                $product ->file                       = $filename;
 
             endif;
 
             if($request->hasFile('file_icon')):
 
-                 $fileExt = trim($request->file('file_icon')->getClientOriginalExtension());
+                $fileExt = trim($request->file('file_icon')->getClientOriginalExtension());
                 $upload_path = Config::get('filesystems.disks.uploads.root');
                 $name = Str::slug(str_replace($fileExt, '', $request->file('file_icon')->getClientOriginalName()));
                 $filenameicon = rand(1,999).'-'.$name.'.'.$fileExt;
-                 $product ->file_icon                       = $filenameicon;
+                $product ->file_icon                       = $filenameicon;
 
             endif;
 
@@ -891,13 +890,17 @@ class ProductsController extends Controller
                 endif;
 
                 if($request->hasFile('file_icon')):
-                    $fl = $request->file->storeAs($path, $filename, 'uploads');
-
-                    $imagH = Image::make($file_absolute);
-                    $imagH->resize(480, 640, function($constraint){
+                    $fl = $request->file->storeAs($path, $filenameicon, 'uploads');
+                    $imagT = Image::make($file_absolute);
+                    $imagT->resize(150, 150, function($constraint){
                         $constraint->upsize();
                     });
-                    $imagH->save($upload_path.'/'.$path.'/'.$filename);
+                    $imagW = Image::make($file_absolute);
+                    $imagW->resize(1080, 720, function($constraint){
+                        $constraint->upsize();
+                    });
+                    $imagT->save($upload_path.'/'.$path.'/t_'.$filenameicon);
+                    $imagW->save($upload_path.'/'.$path.'/'.$filenameicon);
                 endif;
 
 
@@ -931,7 +934,7 @@ class ProductsController extends Controller
 
 
        // dd($img);
-         return view('admin.promotions.edit0', $data);
+        return view('admin.promotions.edit0', $data);
     }
 
     public function postPromoEdit(Request $request, $id)

@@ -46,41 +46,6 @@
             </div>
         </section>
 
-
-       <!--
-         <section id="BestSellers-H" class="col-lg-12 justify-content-center align-items-center Height40" style="padding: 0; margin-top: 1%;  height: 180px;">
-
-            <div class="row justify-content-center align-items-center Height20" style="padding: 0; ">
-                <p class="year">Lo más pedido</p>
-            </div>
-
-            <div class="row justify-content-center align-items-center Height80" style="padding: 0; ">
-
-                <div class="page-wrapper">
-                    <div class="poste-slidere">
-                        <div class="poste-wrappere_2">
-
-                        @foreach ($bestsellers as $bestseller)
-
-                            <div class="poste">
-                                <div class="Height100 img-vid">
-                                    <img class="vidd" src="{{$bestsellers->file}}" >
-                                </div>
-                            </div>
-
-                        @endforeach
-
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-         </section>
-
-        -->
-
         <section id="Promotions-H" class="col-12 justify-content-center align-items-center p-0">
 
             <div class="row justify-content-center align-items-center Height20" style="padding: 0; ">
@@ -92,13 +57,13 @@
                 <div id="more-sould-modal" class="Height80 C-c justify-content-center " style=" overflow-x: auto;   display: inline-flex; width:100%;    text-align: center;     height: 100%;">
 
                     @foreach ($promotions as $filmografia)
-                                <div class="Height100">
+                        <div class="Height100">
 
-                                    <div class="col-12 Height100" style=" padding: 0; text-align: center;">
-                                        <img style="height: 100%;" class="Cerveza-B" src="{{ url('/multimedia/'.$filmografia->file_path.'/'.$filmografia->file_icon) }}">
-                                    </div>
+                            <div class="col-12 Height100" style=" padding: 0; text-align: center;">
+                                <img style="height: 100%;" class="Cerveza-B" src="{{ url('/multimedia/'.$filmografia->file_path.'/'.$filmografia->file_icon) }}">
+                            </div>
 
-                                </div>
+                        </div>
 
                     @endforeach
                 </div>
