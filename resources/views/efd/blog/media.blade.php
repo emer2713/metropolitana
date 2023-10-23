@@ -4,8 +4,6 @@
 @section('content')
     <div class="row justify-content-center align-items-center " style="height: auto;">
 
-
-
     </div>
 @endsection
 

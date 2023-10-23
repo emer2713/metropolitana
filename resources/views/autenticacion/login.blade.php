@@ -15,7 +15,7 @@
                 <div class=" form-group row justify-content-center align-items-center">
                     <div class="col-12 col-lg-6 ml">
                         <p >Usuario</p>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="asdf@as.com" required autocomplete="email" autofocus>
+                        <input id="email" placeholder="correo@smp.com" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="" required autocomplete="email" autofocus>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
